@@ -1,0 +1,28 @@
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password 
+      MYSQL_DATABASE: pruebaNode  
+    ports:
+      - "3306:3306"
+    networks:
+      - backend-express
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DB_NAME: pruebaNode
+      DB_USER: root
+      DB_PASSWORD: root_password
+      DB_HOST: db
+      DB_PORT: 3306
+    depends_on:
+      - db
+    networks:
+      - backend-express
+
+networks:
+  backend-express:
