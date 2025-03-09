@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/index.js"
+    "dev": "nodemon ./src/index.js",
+    "start": "node swagger.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +19,14 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.13.0",
     "nodemon": "^3.1.9",
+    "pruebanode": "file:",
     "sequelize": "^6.37.6",
     "wait-for": "^2.1.1"
+  },
+  "devDependencies": {
+    "install": "^0.13.0",
+    "npm": "^11.2.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
   }
 }

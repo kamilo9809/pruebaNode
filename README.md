@@ -29,7 +29,13 @@ El proyecto se puede ejecutar de dos maneras:
 2. Instalar dependencias con `npm install`
 3. Ejecutar el comando `npm run dev` para iniciar el proyecto
 
+
+## Visualización en Interfaz Gráfica y Testing con Swagger UI
+
+1. Al correr el proyecto, pueden probar las API en la dirección http://localhost:3000/api-docs, donde se encuentran todos los endpoints. Estos están protegidos debido al JWT, y al usarlos generará un error 401. Por lo tanto, deben probar el endpoint que dice `auth/register` para registrar un usuario y el endpoint para iniciar sesión que es el `auth/login`, para que se genere el bearer y el token. Luego, pueden pegar el token en el apartado que dice "Authorization" para utilizar los endpoints protegidos.
+
 ## Notas
 
 * Asegurarse de instalar las dependencias antes de ejecutar el proyecto
 * La base de datos MySQL debe ser creada antes de ejecutar el proyecto en modo no-Docker
+
