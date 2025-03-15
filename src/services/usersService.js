@@ -37,18 +37,20 @@ export default class UserService {
     try {
       const { id } = req.params;
       const { name, lastName, email, password } = req.body;
-
-      const [updated] = await user.update(
-        { name, lastName, email, password },
-        { where: { id } }
-      );
-
-      if (!updated) {
-        return res.status(404).json({ message: "user not found" });
+  
+      const usuario = await user.findByPk(id);
+      if (!usuario) {
+        return res.status(404).json({ message: "User not found" });
       }
-
-      const updatedUser = await user.findByPk(id);
-      return res.json(updatedUser);
+  
+      usuario.name = name;
+      usuario.lastName = lastName;
+      usuario.email = email;
+      usuario.password = password; 
+  
+      await usuario.save();
+  
+      return res.json(usuario);
     } catch (error) {
       return res.status(500).json({ error: error.message });
     }

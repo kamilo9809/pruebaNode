@@ -26,4 +26,10 @@ user.beforeCreate(async (user) => {
     user.password = await bcrypt.hash(user.password, 10);
   });
 
+user.beforeUpdate(async (user)=>{
+  if (user.changed("password")) {
+    user.password = await bcrypt.hash(user.password, 10);
+  }
+})
+
 export default user
