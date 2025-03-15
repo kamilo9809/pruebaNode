@@ -31,7 +31,7 @@ router.get('/user/:id',(req,res) =>usersService.getById(req,res))
  * @description Actualiza un usuario por id
  * @response 201 - actualiza correctamente un usuario
  */
-router.put('/user/:id',(req,res) =>usersService.updated(req,res))
+router.put('/user/:id',(req,res) =>usersService.update(req,res))
 
 /**
  * @route DELETE /user/:id

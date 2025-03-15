@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import router from './routes/index.js'
 import swaggerUi from 'swagger-ui-express';
-import swaggerFile from '../swagger_output.json' assert { type: "json" };
+import swaggerFile from '../swagger_output.json' with { type: "json" };
 
 import './middleware/modelsSync.js'
 
