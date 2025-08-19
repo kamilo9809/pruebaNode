@@ -18,5 +18,5 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 
 app.listen(port,()=>{
-    console.log(`server is runin en http://localhost:${port}`);
+    console.log(`server is runing en http://localhost:${port}`);
 })
